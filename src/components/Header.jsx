@@ -36,10 +36,10 @@ const Header = () => {
                 <NavLink to="/user">USER</NavLink>
                 <ul className="p-2">
                   <li>
-                    <NavLink to="/profile">Profile</NavLink>
+                    <NavLink to="/profile">PROFILE</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/logout">Logout</NavLink>
+                    <NavLink to="/login">LOGIN</NavLink>
                   </li>
                 </ul>
               </li>
@@ -73,10 +73,10 @@ const Header = () => {
                 </summary>
                 <ul className="p-2">
                   <li>
-                    <NavLink to="/profile">Profile</NavLink>
+                    <NavLink to="/profile">PROFILE</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/logout">Logout</NavLink>
+                  <NavLink to="/login">LOGIN</NavLink>
                   </li>
                 </ul>
               </details>

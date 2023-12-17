@@ -6,6 +6,8 @@ import User from "../pages/User";
 import Products from "../components/Products";
 import Home from "../pages/Home";
 import Contact from "../components/Contact";
+import RegistrationForm from "../components/auth/RegistrationForm";
+import LoginForm from "../components/auth/LoginForm";
 
 const routes = createBrowserRouter([
   {
@@ -34,6 +36,14 @@ const routes = createBrowserRouter([
         path: "contact",
         element: <Contact />,
       },
+      {
+        path: "/signup",
+        element: <RegistrationForm />,
+    },
+    {
+        path: "/login",
+        element: <LoginForm />,
+    },
     ],
   },
   {
