@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.heading{
+    @apply text-2xl font-bold text-blue-300 bg-black py-6 
+}
