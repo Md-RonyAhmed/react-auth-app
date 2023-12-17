@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import NotFound from "../pages/NotFound";
 import About from "../pages/About";
-import User from "../pages/User";
 import Products from "../components/Products";
 import Home from "../pages/Home";
 import Contact from "../components/Contact";
@@ -29,21 +28,17 @@ const routes = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "user",
-        element: <User />,
-      },
-      {
         path: "contact",
         element: <Contact />,
       },
       {
         path: "/signup",
         element: <RegistrationForm />,
-    },
-    {
+      },
+      {
         path: "/login",
         element: <LoginForm />,
-    },
+      },
     ],
   },
   {

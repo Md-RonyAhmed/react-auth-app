@@ -1,6 +1,36 @@
+import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink } from "react-router-dom";
+import auth from "../firebase/firebse.config";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 const Header = () => {
+  const [user, setUser] = useAuthState(auth);
+
+  const handleSignOut = () => {
+    signOut(auth);
+    Swal.fire({
+      icon: "warning",
+      title: "Logout Successfully",
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+    });
+  };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+  });
+
   return (
     <>
       <div className="navbar bg-sky-100 space-x-24 fixed z-10">
@@ -33,7 +63,7 @@ const Header = () => {
                 <NavLink to="/products">PRODUCTS</NavLink>
               </li>
               <li>
-                <NavLink to="/user">USER</NavLink>
+                <li>USER</li>
                 <ul className="p-2">
                   <li>
                     <NavLink to="/profile">PROFILE</NavLink>
@@ -69,15 +99,21 @@ const Header = () => {
             <li>
               <details>
                 <summary>
-                  <NavLink to="/user">USER</NavLink>
+                  <li>USER</li>
                 </summary>
                 <ul className="p-2">
                   <li>
                     <NavLink to="/profile">PROFILE</NavLink>
                   </li>
-                  <li>
-                  <NavLink to="/login">LOGIN</NavLink>
-                  </li>
+                  {user ? (
+                    <li>
+                      <NavLink onClick={handleSignOut}>LOGOUT</NavLink>
+                    </li>
+                  ) : (
+                    <li>
+                      <NavLink to="/login">LOGIN</NavLink>
+                    </li>
+                  )}
                 </ul>
               </details>
             </li>
