@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Header = () => {
   return (
     <>
@@ -22,57 +24,68 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-sky-100 rounded-box w-52"
             >
               <li>
-                <a>HOME</a>
+                <NavLink to="/">HOME</NavLink>
               </li>
               <li>
-                <a>PRODUCTS</a>
+                <NavLink to="/products">PRODUCTS</NavLink>
               </li>
               <li>
-                <a>USER</a>
+                <NavLink to="/user">USER</NavLink>
                 <ul className="p-2">
                   <li>
-                    <a>Profile</a>
+                    <NavLink to="/profile">Profile</NavLink>
                   </li>
                   <li>
-                    <a>Logout</a>
+                    <NavLink to="/logout">Logout</NavLink>
                   </li>
                 </ul>
               </li>
               <li>
-                <a>ABOUT</a>
+                <NavLink to="/about">ABOUT</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact">CONTACT</NavLink>
               </li>
             </ul>
           </div>
-          <a className="text-xl font-bold cursor-pointer hover:text-blue-600 transition-all duration-500">
+          <NavLink
+            to="/"
+            className="text-xl font-bold cursor-pointer hover:text-blue-600 transition-all duration-500"
+          >
             ProductiFy
-          </a>
+          </NavLink>
         </div>
         <div className="navbar-end hidden lg:flex space-x-24">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>HOME</a>
+              <NavLink to="/">HOME</NavLink>
             </li>
             <li>
-              <a>PRODUCTS</a>
+              <NavLink to="/products">PRODUCTS</NavLink>
             </li>
             <li>
               <details>
-                <summary>USER</summary>
+                <summary>
+                  <NavLink to="/user">USER</NavLink>
+                </summary>
                 <ul className="p-2">
                   <li>
-                    <a>Profile</a>
+                    <NavLink to="/profile">Profile</NavLink>
                   </li>
                   <li>
-                    <a>Logout</a>
+                    <NavLink to="/logout">Logout</NavLink>
                   </li>
                 </ul>
               </details>
             </li>
             <li>
-              <a>ABOUT</a>
+              <NavLink to="/about">ABOUT</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">CONTACT</NavLink>
             </li>
           </ul>
         </div>

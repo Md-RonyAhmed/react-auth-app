@@ -5,36 +5,41 @@ import About from "../pages/About";
 import User from "../pages/User";
 import Products from "../components/Products";
 import Home from "../pages/Home";
+import Contact from "../components/Contact";
 
-const routes= createBrowserRouter([
-    {
-        path:"/",
-        element:<App/>,
-        children:[
-            {
-                path:"/",
-                element:<Home/>
-            },
-            {
-                path:"products",
-                element:<Products/>,
-                loader: ()=> fetch("https://tech-net-server-lilac.vercel.app/products")
-            },
-            {
-                path:"about",
-                element:<About/>
-            },
-            {
-                path:"user",
-                element:<User/>
-            },
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "products",
+        element: <Products />,
+        loader: () =>
+          fetch("https://tech-net-server-lilac.vercel.app/products"),
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "user",
+        element: <User />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
+]);
 
-        ]
-    },
-    {
-        path:"*",
-        element:<NotFound/>
-    }
-])
-
-export default routes
+export default routes;
